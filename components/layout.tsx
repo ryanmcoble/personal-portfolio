@@ -59,46 +59,29 @@ export default function Layout({
                     </ul>
                 </div>
             </div>
-
-            {/* <header className={styles.header}>
-                {home ? (
-                <>
-                    <Image
-                    priority
-                    src="/images/ryan.jpg"
-                    className={utilStyles.borderCircle}
-                    height={144}
-                    width={144}
-                    alt={name}
-                    />
-                    <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                </>
-                ) : (
-                <>
-                    <Link href="/">
-                    <Image
-                        priority
-                        src="/images/ryan.jpg"
-                        className={utilStyles.borderCircle}
-                        height={108}
-                        width={108}
-                        alt={name}
-                    />
-                    </Link>
-                    <h2 className={utilStyles.headingLg}>
-                    <Link href="/" className={utilStyles.colorInherit}>
-                        {name}
-                    </Link>
-                    </h2>
-                </>
-                )}
-            </header> */}
             <main>{children}</main>
             {!home && (
                 <div className='backToHome'>
                 <Link href="/">← Back to home</Link>
                 </div>
             )}
+
+            {/*  Site footer */}
+            <footer>
+                <div className='footer-container'>
+                    <div className='footer-left'>
+                        <h3>Ryan Coble</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                    <div className='footer-right'>
+                        <ul>
+                            <li><a href='#'>My work</a></li>
+                            <li><a href='#'>My skills</a></li>
+                            <li><a href='#'>Hire me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
 
 
             <Script src="https://kit.fontawesome.com/1fe7179e06.js" crossOrigin="anonymous"></Script>

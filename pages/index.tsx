@@ -164,51 +164,117 @@ export default function Home({
                 <div className='portfolio-container transition3'>
                     <div className="portfolio-left">
                         <div className="inner">
-                            <p className="subtitle">Guitar App</p>
-                            <p className="title">Fretastic.com</p>
+                            <p className="subtitle">Ticketing Service</p>
+                            <p className="title">HometownTicketing.com</p>
                             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
                         </div>
                     </div>
-                    <a href='#'><img src='images/fretty.jpg' alt='Fretastic' /></a>
+                    <a href='#'><img src='images/hometownticketing.png' alt='Hometown Ticketing' /></a>
                 </div>
                 <div className='portfolio-container transition3'>
                     <div className="portfolio-left">
                         <div className="inner">
-                            <p className="subtitle">Guitar App</p>
-                            <p className="title">Fretastic.com</p>
+                            <p className="subtitle">Covid Testing</p>
+                            <p className="title">SanescoHealth.com</p>
                             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
                         </div>
                     </div>
-                    <a href='#'><img src='images/fretty.jpg' alt='Fretastic' /></a>
+                    <a href='#'><img src='images/sanescohealth.png' alt='Sanesco Health' /></a>
                 </div>
                 <div className='portfolio-container transition3'>
                     <div className="portfolio-left">
                         <div className="inner">
-                            <p className="subtitle">Guitar App</p>
-                            <p className="title">Fretastic.com</p>
+                            <p className="subtitle">Shopify Experts Marketplace</p>
+                            <p className="title">Storetasker.com</p>
                             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
                         </div>
                     </div>
-                    <a href='#'><img src='images/fretty.jpg' alt='Fretastic' /></a>
+                    <a href='#'><img src='images/storetasker.png' alt='Storetasker' /></a>
+                </div>
+                <div className='portfolio-container transition3'>
+                    <div className="portfolio-left">
+                        <div className="inner">
+                            <p className="subtitle">SMS Marketing</p>
+                            <p className="title">MobileDrip.com</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <a href='#'><img src='images/mobiledrip.png' alt='Mobile Drip' /></a>
+                </div>
+                <div className='portfolio-container transition3'>
+                    <div className="portfolio-left">
+                        <div className="inner">
+                            <p className="subtitle">eCommerce Brand</p>
+                            <p className="title">ChubbiesShorts.com</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <a href='#'><img src='images/chubbies.png' alt='Chubbies Shorts' /></a>
+                </div>
+                <div className='portfolio-container transition3'>
+                    <div className="portfolio-left">
+                        <div className="inner">
+                            <p className="subtitle">eCommerce Brand</p>
+                            <p className="title">47Brand.com</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <a href='#'><img src='images/47brand.png' alt='47 Brand' /></a>
+                </div>
+                <div className='portfolio-container transition3'>
+                    <div className="portfolio-left">
+                        <div className="inner">
+                            <p className="subtitle">eCommerce Brand</p>
+                            <p className="title">RiptApparel.com</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <a href='#'><img src='images/ript-apparel.png' alt='Ript Apparel' /></a>
+                </div>
+                <div className='portfolio-container transition3'>
+                    <div className="portfolio-left">
+                        <div className="inner">
+                            <p className="subtitle">eCommerce Brand</p>
+                            <p className="title">Spicely.com</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <a href='#'><img src='images/spicely.png' alt='Spicely' /></a>
                 </div>
             </section>
 
-            {/* <section className={utilStyles.headingMd}>
-                <p>Building Beautifully Designed Software Solutions</p>
-            </section>
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Blog</h2>
-                <ul className={utilStyles.list}>
-                {allPostsData.map(({ id, date, title }) => (
-                    <li className={utilStyles.listItem} key={id}>
-                    <Link href={`/posts/${id}`}>{title}</Link>
-                    <br />
-                    <small className={utilStyles.lightText}>
-                        <Date dateString={date} />
-                    </small>
-                    </li>
-                ))}
-                </ul>
+            {/* Contact */}
+            {/* <section className='contact'>
+                <div className='contact-container transition3'>
+                    <div className="contact-left">
+                        <div className="inner">
+                            <p className="subtitle">Let's Talk</p>
+                            <p className="title">Contact Us</p>
+                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                        </div>
+                    </div>
+                    <div className="contact-right">
+                        <div className="inner">
+                            <form action="">
+                                <div className="form-group">
+                                    <label htmlFor="name">Name</label>
+                                    <input type="text" name="name" id="name" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" name="email" id="email" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="message">Message</label>
+                                    <textarea name="message" id="message" cols={30} rows={10}></textarea>
+                                </div>
+                                <div className="form-group">
+                                    <button type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </section> */}
         </Layout>
     )
