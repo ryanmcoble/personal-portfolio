@@ -1,0 +1,14 @@
+Excerpt:
+"At Mobiledrip, I was the sole engineer responsible for developing a powerful SMS drip marketing campaign management platform that processed millions of messages daily. I utilized Laravel with a MongoDB database and built a complex queueing system to handle the high volume of messages. Working directly with the owners, I was able to bring their vision to life by delivering a performant platform that offered advanced features such as detecting stop words and tracking campaign performance through a click funnel system. With integration capabilities for multiple SMS APIs, including Twilio, Mobiledrip was a comprehensive solution for businesses looking to reach their target audience effectively."
+
+Introduction to Mobiledrip
+I was thrilled to be a part of Mobiledrip, a unique and innovative SMS drip marketing platform that aimed to revolutionize the industry. My role as the only engineer at the company was to bring the vision of the owners to life, and I was able to deliver a solution that exceeded their expectations.
+
+Technical Highlights
+The Mobiledrip platform was built using Laravel, with a MongoDB database that provided the necessary scalability to process millions of SMS messages daily. The complex queueing system I built was able to handle the high volume of messages and ensure that all campaigns were delivered on time and without interruption.
+
+Advanced Features
+I was also responsible for delivering advanced features that set Mobiledrip apart from its competitors. This included the ability to detect stop words, automatically removing people from further messages, and a highly performant click funnel system that tracked campaign performance metrics. The platform also allowed for integration with multiple SMS APIs, including Twilio, giving businesses the flexibility to choose the right solution for their needs.
+
+Working Directly with the Owners
+Working directly with the owners of Mobiledrip was an incredible experience. It allowed me to truly understand their vision and bring it to life through my development work. The trust and confidence they had in me was a testament to the quality of work I was able to deliver for the company.

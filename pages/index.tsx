@@ -1,66 +1,53 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.scss'
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedProjectsData } from '../lib/projects'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 import gsap from 'gsap'
 import { useEffect, useRef } from 'react'
+import { Element } from 'react-scroll'
+import Hero from '../components/hero'
+import FeaturedProject from '../components/featured_project'
+import Skills from '../components/skills'
+import Portfolio from '../components/portfolio'
 
 export default function Home({
-    allPostsData
+    allProjectsData
 }: {
-    allPostsData: {
+    allProjectsData: {
         date: string
         title: string
         id: string
     }[]
 }) {
 
-    const contentRef = useRef(null);
-    const headerRef = useRef(null);
-    const meetRef = useRef(null);
-    const scrollRef = useRef(null);
-    const heroDesignRef = useRef(null);
+    const transition2Refs = useRef([]);
+    const transition3Refs = useRef([]);
 
     useEffect(() => {
-        const tl = gsap.timeline();
-        tl.from(contentRef.current, {
-            y: '-30%',
+        gsap.from(transition2Refs.current, {
+            scrollTrigger: {
+                trigger: transition2Refs.current,
+                start: 'top bottom'
+            },
+            y: 50,
             opacity: 0,
-            duration: 2,
-            ease: 'power4.out',
+            duration: 1.2,
+            stagger: 0.3
         });
 
-        tl.from(headerRef.current, {
-            opacity: 0,
-            y: -50,
-            ease: 'power4.out',
-            stagger: 0.3,
-            duration: 2,
-        }, '-=1.5');
-        tl.from(meetRef.current, {
-            opacity: 0,
-            y: -50,
-            ease: 'power4.out',
-            stagger: 0.3,
-            duration: 2,
-        }, '-=1.5');
-        tl.from(scrollRef.current, {
-            opacity: 0,
-            y: -50,
-            ease: 'power4.out',
-            stagger: 0.3,
-            duration: 2,
-        }, '-=1.5');
-
-        tl.from(heroDesignRef.current, {
-            opacity: 0,
+        gsap.from(transition3Refs.current, {
+            scrollTrigger: {
+                trigger: transition3Refs.current,
+                start: 'top bottom'
+            },
             y: 50,
-            ease: 'power4.out',
-            duration: 1
-        }, '-=2');
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.6
+        });
     }, []);
 
     return (
@@ -69,179 +56,106 @@ export default function Home({
                 <title>{siteTitle}</title>
             </Head>
 
-            {/* Hero */}
-            <div className='hero'>
-                <div ref={contentRef} className='content'>
-                    <h1 ref={headerRef} className=''>Thoughtfully Crafted Software Solutions</h1>
-                    <div ref={meetRef} className='meet'>
-                        <span>👇</span>
-                        <p>Meet Ryan Coble</p>
-                    </div>
-
-                    {/* Scroll icon svg */}
-                    {/* <svg className='scroll' width="32" height="61" viewBox="0 0 32 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="28" height="57" rx="14" stroke="white" stroke-width="4"/>
-                    <path className='circle' d="M25 15C25 19.9706 20.9706 24 16 24C11.0294 24 7 19.9706 7 15C7 10.0294 11.0294 6 16 6C20.9706 6 25 10.0294 25 15Z" fill="#D9D9D9"/>
-                    </svg> */}
-                    <svg ref={scrollRef} className='scroll' width='40' height='77' viewBox='0 0 40 77' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                        <g id='scroll' transform="translate(-253 -787)">
-                            <g id='Rectangle_1' data-name="Rectangle 1" transform="translate(253 787)" fill='none' stroke='white' strokeWidth='4'>
-                                <rect width='40' height='77' rx='20' stroke='none'/>
-                                <rect width='36' height='73' x='2' y='2' rx='18' fill='none'/>
-                            </g>
-                            <circle className='circle' id='Ellipse_1' data-name='Ellipse 1' cx='11' cy='11' r='11' transform="translate(262 798)" fill='#fff' />
-                        </g>
-                    </svg>
-
-                </div>
-                
-                {/* hero design svg */}
-                <svg ref={heroDesignRef} className='hero-design' width="639" height="640" viewBox="0 0 639 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M319 400C319 444.183 283.183 480 239 480C194.817 480 159 444.183 159 400C159 355.817 194.817 320 239 320C283.183 320 319 355.817 319 400Z" fill="#00F7FF" fillOpacity="0.65" shapeRendering="crispEdges"/>
-                    <path d="M480 240C480 284.183 444.183 320 400 320C355.817 320 320 284.183 320 240C320 195.817 355.817 160 400 160C444.183 160 480 195.817 480 240Z" fill="#FF64CB" fillOpacity="0.65"/>
-                    <rect x="161" y="160" width="160" height="160" fill="white"/>
-                    <rect x="161" y="480" width="160" height="160" fill="white"/>
-                    <rect x="319" width="160" height="160" fill="#6E00FF"/>
-                    <rect x="319" y="320" width="160" height="160" fill="#6E00FF"/>
-                    <rect y="320" width="160" height="160" fill="#FF64CB" fillOpacity="0.1"/>
-                    <rect x="480" y="160" width="160" height="160" fill="#6E00FF" fillOpacity="0.1"/>
-                </svg>
-
-            </div>
+            {/* Hero section */}
+            <Hero />
 
             {/* Featured project */}
-            <section className='featured'>
-                <div className='left'>
-                    <div className='inner transition2'>
-                        <p className='subtitle'>Featured Project</p>
-                        <a href='#' className='title'>Automated Trading Platform</a>
-
-                        <p className='description'>
-                            Automated trading platform for stock market and cryptocurrency trading. Built with Rust, React, Node, Laravel, Kafka and MySQL.
-                        </p>
-                    </div>
-                </div>
-                <img className='right transition2' src='/images/featured.png' alt='Featured project' />
-            </section>
+            <FeaturedProject
+                transitionRef={transition2Refs}
+                project={{
+                    title: 'Automated Trading Platform',
+                    description: 'I have built an automated trading platform for the stock market and cryptocurrency trading utilizing the latest technologies, including Rust, React, Node, Laravel, Kafka, and MySQL. This technology stack offers speed, stability, and scalability, providing traders with more accurate and efficient trading signals and a seamless user experience.',
+                    featured_image: '/images/featured.png'
+                }}
+            />
 
             {/* Skills */}
-            <section className='skills'>
-                <div className='skills-container'>
-                    <ul>
-                        <li className='transition2'>
-                            <div className='icon-container one'>
-                                <img src='/images/icons/architect.svg' alt='System Architecture Icon' />
-                            </div>
-                            <p className='title'>System Architecture</p>
-                            <p className='description'>
-                                Transform Your Business with a Senior Engineer's Expertise. Discover top-notch system architecture in our portfolio. Benefit from optimized performance, scalability, and security. Partner with a seasoned developer today.
-                            </p>
-                        </li>
-                        <li className='transition2'>
-                            <div className='icon-container two'>
-                                <img src='/images/icons/frontend.svg' alt='Frontend Icon' />
-                            </div>
-                            <p className='title'>Frontend Development</p>
-                            <p className='description'>
-                                Elevate Your User Experience with Frontend Development Expertise. Explore our portfolio to see the results of seamless design and technical excellence. Partner with us to bring your vision to life and create an exceptional user experience.
-                            </p>
-                        </li>
-                        <li className='transition2'>
-                            <div className='icon-container three'>
-                                <img src='/images/icons/backend.svg' alt='Backend Icon' />
-                            </div>
-                            <p className='title'>Backend Development</p>
-                            <p className='description'>
-                                Unleash the Potential of Your Backend with Expert Development. Explore our portfolio and see the power of robust, scalable, and secure backend solutions. Partner with us to streamline your operations and drive your business forward.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <Element id-='skills' name='skills'>
+                <Skills
+                    transitionRef={transition2Refs}
+                    skills={[
+                        {
+                            title: 'Frontend Development',
+                            description: "I have a passion for crafting beautiful and user-friendly websites that offer a seamless experience to users.", 
+                            // With a strong understanding of HTML, CSS, and JavaScript, I have built various projects that showcase my ability to turn design concepts into reality. From creating responsive layouts to implementing interactive components, I am experienced in the full spectrum of front-end development. I am always looking to stay up-to-date with the latest technologies and am committed to producing clean, maintainable, and efficient code. Whether working independently or as part of a team, I have a strong work ethic and a drive to create the best possible outcome for each project.
+                            image: '/images/icons/frontend.svg'
+                        },
+                        {
+                            title: 'Backend Development',
+                            description: "I have a strong understanding of server-side technologies and the ability to build scalable and efficient systems.",
+                            // I have experience with various programming languages, including Python, PHP, and JavaScript, and have worked with databases such as MySQL, PostgreSQL, and MongoDB. I am skilled in creating RESTful APIs that provide a seamless connection between the front-end and back-end of a web application. I also have experience in developing and deploying applications on cloud platforms such as Amazon Web Services (AWS) and Netlify. With a focus on security and performance, I am committed to delivering high-quality back-end solutions that meet the needs of both users and businesses. Whether working independently or as part of a team, I am a problem-solver and a driven individual who is always looking for ways to improve and enhance the systems I work on.
+                            image: '/images/icons/backend.svg'
+                        },
+                        {
+                            title: 'Software Architecture',
+                            description: "As a software architect, I have a passion for designing and building robust and scalable systems.",
+                            // I have a deep understanding of software design patterns and best practices, and know how to apply these concepts to real-world situations. I have experience with various technologies and programming languages, and have worked on both small and large-scale projects. I am skilled in creating software architecture that considers the needs of both users and businesses, taking into account performance, security, and maintainability. I have a talent for breaking down complex problems into manageable components and for creating clear and concise documentation that guides development teams. Whether working independently or as part of a team, I am a natural leader who is able to communicate complex technical concepts to non-technical stakeholders in a way that they can understand. I am always looking to stay up-to-date with the latest trends and technologies in the field of software architecture, and am committed to delivering high-quality systems that meet the needs of all parties involved.
+                            image: '/images/icons/architect.svg'
+                        }
+                    ]}
+                />
+            </Element>
 
             {/* Portfolio */}
-            <section className='portfolio'>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">Ticketing Service</p>
-                            <p className="title">HometownTicketing.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/hometownticketing.png' alt='Hometown Ticketing' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">Covid Testing</p>
-                            <p className="title">SanescoHealth.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/sanescohealth.png' alt='Sanesco Health' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">Shopify Experts Marketplace</p>
-                            <p className="title">Storetasker.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/storetasker.png' alt='Storetasker' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">SMS Marketing</p>
-                            <p className="title">MobileDrip.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/mobiledrip.png' alt='Mobile Drip' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">eCommerce Brand</p>
-                            <p className="title">ChubbiesShorts.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/chubbies.png' alt='Chubbies Shorts' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">eCommerce Brand</p>
-                            <p className="title">47Brand.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/47brand.png' alt='47 Brand' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">eCommerce Brand</p>
-                            <p className="title">RiptApparel.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/ript-apparel.png' alt='Ript Apparel' /></a>
-                </div>
-                <div className='portfolio-container transition3'>
-                    <div className="portfolio-left">
-                        <div className="inner">
-                            <p className="subtitle">eCommerce Brand</p>
-                            <p className="title">Spicely.com</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
-                        </div>
-                    </div>
-                    <a href='#'><img src='images/spicely.png' alt='Spicely' /></a>
-                </div>
-            </section>
+            <Element id-='portfolio' name='portfolio'>
+                <Portfolio
+                    transitionRef={transition3Refs}
+                    projects={[
+                        {
+                            // link: 'https://hometownticketing.com',
+                            title: 'Hometown Ticketing',
+                            subtitle: 'Digital Ticketing Platform',
+                            description: "As a senior software engineer at Hometown Ticketing, I leveraged my extensive experience with technologies such as Kafka, Laravel, AWS, Microservices, and others to lead the development team in the redesign and rebuild of the company's platform. My contributions helped Hometown Ticketing create a highly functional, user-friendly platform that utilized a variety of cutting-edge technologies and best practices.",
+                            image: '/images/hometownticketing.png'
+                        },
+                        {
+                            title: 'Sanesco Health',
+                            subtitle: 'Covid Testing',
+                            description: 'As the sole engineer at Sanesco Health, I was responsible for a variety of complex technical projects, including the integration and automation of patient data with lab management software and the development of a mobile application for tracking test results. Using my expertise in Laravel, I was able to effectively manage these projects and deliver high-quality solutions that met the needs of the company and its patients.',
+                            image: '/images/sanescohealth.png'
+                        },
+                        {
+                            title: 'Storetasker',
+                            subtitle: 'Shopify Experts Marketplace',
+                            description: 'At Storetasker, I was the driving force behind the creation of a new software platform that connected Shopify store owners with expert talent. My expertise in Laravel and React allowed me to build a platform that provided seamless integrations with the Shopify API, Paypal, Stripe, Mailchimp, and more, to deliver a complete solution for our customers.',
+                            image: '/images/storetasker.png'
+                        },
+                        {
+                            title: 'Mobile Drip',
+                            subtitle: 'SMS Drip Marketing',
+                            description: 'At Mobiledrip, I was the sole engineer responsible for developing a powerful SMS drip marketing campaign management platform that processed millions of messages daily. I utilized Laravel with a MongoDB database and built a complex queueing system to handle the high volume of messages. Working directly with the owners, I was able to bring their vision to life by delivering a performant platform that offered advanced features such as detecting stop words and tracking campaign performance through a click funnel system. With integration capabilities for multiple SMS APIs, including Twilio, Mobiledrip was a comprehensive solution for businesses looking to reach their target audience effectively.',
+                            image: '/images/mobiledrip.png'
+                        },
+                        {
+                            title: 'Chubbies Shorts',
+                            subtitle: 'Ecommerce Brand',
+                            description: 'Built a custom Shopify app and API for Chubbies Shorts that integrated with their Shopify store, allowing customers to vote on male models and for men to submit portfolios for a modeling contest. Worked on a highly customized Shopify theme for Chubbies store.',
+                            image: '/images/chubbies.png'
+                        },
+                        /*{
+                            title: '47 Brand',
+                            subtitle: 'Ecommerce Brand',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!',
+                            image: '/images/47brand.png'
+                        },
+                        {
+                            title: 'Ript Apparel',
+                            subtitle: 'Ecommerce Brand',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!',
+                            image: '/images/ript-apparel.png'
+                        },
+                        {
+                            title: 'Spicely Organics',
+                            subtitle: 'Ecommerce Brand',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!',
+                            image: '/images/spicely.png'
+                        },*/
+                    ]}
+                />
+            </Element>
+
+            {/* Technologies gallery */}
+            
 
             {/* Contact */}
             {/* <section className='contact'>
@@ -249,8 +163,8 @@ export default function Home({
                     <div className="contact-left">
                         <div className="inner">
                             <p className="subtitle">Let's Talk</p>
-                            <p className="title">Contact Us</p>
-                            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas consectetur dolore, fugit quidem, nesciunt molestiae animi est facere esse, blanditiis vitae quos libero consequuntur velit. Nihil vitae hic quis!</p>
+                            <p className="title">Connect with me to learn more about my experience and expertise</p>
+                            <p className="description">Whether you're looking to collaborate on a project, discuss potential job opportunities, or just want to say hello, I'd love to hear from you. Fill out the form below or send me an email at ryan.m.coble@gmail.com and I'll get back to you as soon as I can.</p>
                         </div>
                     </div>
                     <div className="contact-right">
@@ -281,10 +195,10 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allProjectsData = getSortedProjectsData()
   return {
     props: {
-      allPostsData
+      allProjectsData
     }
   }
 }

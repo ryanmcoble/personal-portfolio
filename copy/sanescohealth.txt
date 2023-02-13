@@ -1,0 +1,11 @@
+Excerpt:
+As the sole engineer at Sanesco Health, I was responsible for a variety of complex technical projects, including the integration and automation of patient data with lab management software and the development of a mobile application for tracking test results. Using my expertise in Laravel, I was able to effectively manage these projects and deliver high-quality solutions that met the needs of the company and its patients.
+
+Paragraph 1:
+At Sanesco Health, I was tasked with integrating and automating the record-keeping of patient data with various software systems, including FormStack and Salesforce. This involved the creation of custom scripts and integrations that would allow the smooth flow of information between these systems and ensure that patient data was always up-to-date and accurate. My expertise in Laravel proved to be invaluable in this regard, as I was able to create highly functional and scalable integrations that met the needs of the company and its patients.
+
+Paragraph 2:
+In addition to my work on the integrations, I was also responsible for developing a mobile application that would allow patients to track the status of their Covid test results. This involved the creation of an API that would communicate with the lab management software and update patients on the status of their tests. I utilized Laravel for the API and the background processes that updated the test results, ensuring that the application was fast, reliable, and user-friendly.
+
+Paragraph 3:
+Overall, my contributions to Sanesco Health were critical to the success of the company. Through my technical expertise and ability to deliver high-quality solutions, I was able to help Sanesco Health improve its record-keeping processes, streamline its operations, and provide its patients with a better experience. I am proud to have been a part of this important work and I am confident that my contributions will continue to make a positive impact in the future.

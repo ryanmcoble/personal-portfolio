@@ -1,0 +1,11 @@
+Excerpt:
+As a senior software engineer at Hometown Ticketing, I leveraged my extensive experience with technologies such as Kafka, Laravel, AWS, Microservices, and others to lead the development team in the redesign and rebuild of the company's platform. My contributions helped Hometown Ticketing create a highly functional, user-friendly platform that utilized a variety of cutting-edge technologies and best practices.
+
+Paragraph 1:
+As the lead developer for Hometown Ticketing's platform redesign and rebuild project, I utilized my expertise in technologies such as Kafka, Laravel, and AWS to create a highly scalable, robust platform. I worked closely with the development team to ensure that the platform was able to meet the needs of both the company and its users, and was able to bring my technical expertise and experience to bear in order to help the project achieve its goals. In particular, I was responsible for implementing a number of key features, including an authentication service with SSO for JumpCloud and a notification service with multiple channels of messages (SMS, email, push, etc.).
+
+Paragraph 2:
+In addition to my work on the back-end of the platform, I also leveraged my experience with technologies such as Node.js, Postgres SQL, React.js, Redis, and Docker to ensure that the platform was able to meet the needs of users. I worked closely with the development team to ensure that the platform was highly responsive and user-friendly, and was able to utilize a variety of testing and code quality tools, including PHPUnit, static analysis and code coverage tools, and CI/CD with Github, to ensure that the platform was highly reliable and robust.
+
+Paragraph 3:
+Overall, my contributions to Hometown Ticketing's platform redesign and rebuild project helped to create a highly functional, user-friendly platform that leveraged a variety of cutting-edge technologies and best practices. With my strong technical skills and leadership abilities, I was able to help Hometown Ticketing create a platform that will help the company to continue to grow and thrive in the future, and I am proud to have been a part of this exciting project.

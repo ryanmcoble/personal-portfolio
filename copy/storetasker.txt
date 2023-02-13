@@ -1,0 +1,14 @@
+Excerpt:
+At Storetasker, I was the driving force behind the creation of a new software platform that connected Shopify store owners with expert talent. My expertise in Laravel and React allowed me to build a platform that provided seamless integrations with the Shopify API, Paypal, Stripe, Mailchimp, and more, to deliver a complete solution for our customers.
+
+Paragraph 1:
+When I joined Storetasker as the only engineer, I was given the challenging task of recreating the software from scratch. I rose to the occasion and utilized my expertise in Laravel and React to build a platform that met the needs of both Shopify store owners and experts. Through integrations with the Shopify API, Paypal, and Stripe payment processors, I was able to streamline the process of connecting customers with developers, designers, and marketers and provide a seamless payment experience.
+
+Paragraph 2:
+In addition to these integrations, I also built custom solutions to meet the unique needs of our customers. I implemented a system to generate custom PDF invoices and integrated with Mailchimp for email marketing list management. These additional features helped to differentiate our platform and make it more valuable to our customers.
+
+Paragraph 3:
+As the company grew and matured, I played an important role in its success. I helped lead Storetasker from a one-person operation to a team of 14 and worked closely with the CEO and other company leaders to ensure that the platform was aligned with the company's vision and goals. My technical expertise and dedication to delivering a high-quality product were critical to the company's growth and profitability. I am proud to have been a part of Storetasker's success story and am confident that my skills and experience will continue to be valuable in my future endeavors.
+
+
+

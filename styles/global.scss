@@ -32,6 +32,10 @@ img {
 	display: block;
 }
 
+.white {
+	color: white !important;
+}
+
 
 .nav-container {
 	background: #6700EE;
@@ -64,6 +68,9 @@ img {
 
 .social-header, .hero-design {
 	display: none;
+}
+.social-header i {
+	color: black;
 }
 
 .hero {
@@ -182,15 +189,109 @@ section {
 	}
 }
 
+
+.contact {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #F5F5F5;
+}
+
+.contact .contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .contact-left {
+  width: 40%;
+  text-align: left;
+}
+
+.contact .contact-left .inner {
+  padding: 30px;
+}
+
+.contact .contact-left .subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact .contact-left .title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact .contact-left .description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact .contact-right {
+  width: 60%;
+//   background-color: #fff;
+  border-radius: 10px;
+//   box-shadow: 0 0 10px #ccc;
+}
+
+.contact .contact-right .inner {
+  padding: 30px;
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+}
+
+.contact .form-group label {
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.contact .form-group input[type="text"],
+.contact .form-group input[type="email"],
+.contact .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact .form-group button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact .form-group button[type="submit"]:hover {
+  background-color: #666;
+}
+
 .footer-container {
 	background: #6700EE;
 	color: white;
 	display: flex;
-	justify-content: space-around;
-	padding: 4em;
+	justify-content: space-between;
+	padding: 0 4em 4em 4em;
 
 	a {
 		color: white;
+	}
+
+	p {
+		margin: 0;
 	}
 }
 
@@ -272,7 +373,6 @@ section {
 			float: right;
 
 			i {
-				color: black;
 				width: 20px;
 				height: 20px;
 			}
@@ -311,6 +411,27 @@ section {
 		float: right;
 		max-width: 500px;
 	}
+
+	.social-footer {
+		display: block;
+		padding: 2em 4em 2em 0;
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+			width: 7em;
+			float: right;
+
+			i {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	.footer-container {
+		padding: 2em 2em 2em 10em;
+	}
 }
 
 
@@ -327,6 +448,9 @@ section {
 	.hero .content {
 		padding: 6em 8em 6em 10em;
 	}
+	.footer-container {
+		padding: 2em 2em 2em 10em;
+	}
 }
 
 
@@ -342,6 +466,9 @@ section {
 	}
 	.hero .content {
 		padding: 9em 20em 6em 20em;
+	}
+	.footer-container {
+		padding: 2em 2em 2em 10em;
 	}
 }
 

@@ -4,7 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
-import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
+import { useEffect } from 'react'
+import Scroll from 'react-scroll'
+
+const  ScrollLink = Scroll.Link
 
 const name = 'Ryan Coble'
 export const siteTitle = 'Ryan Coble\'s Portfolio'
@@ -18,21 +21,24 @@ export default function Layout({
 }) {
 
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
+
+    useEffect(() => {
+        // gsap.to()
+    }, []);
 
     return (
         <div className='container'>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
-                name="description"
-                content="Ryan Coble's Portfolio"
+                    name="description"
+                    content="Ryan Coble's Portfolio"
                 />
                 <meta
-                property="og:image"
-                content={`https://og-image.vercel.app/${encodeURI(
-                    siteTitle
-                )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+                    property="og:image"
+                    content={`https://og-image.vercel.app/${encodeURI(
+                        siteTitle
+                    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -45,17 +51,29 @@ export default function Layout({
 
                     <nav>
                         <ul>
-                            <li><a href='#'>My work</a></li>
-                            <li><a href='#'>My skills</a></li>
-                            <li><a href='#'>Hire me</a></li>
+                            <li>
+                                <ScrollLink to='portfolio' href='#' spy={true} smooth={true} duration={500} offset={-100}>
+                                    My work
+                                </ScrollLink>
+                            </li>
+                            <li>
+                                <ScrollLink to='skills' href='#' spy={true} smooth={true} duration={500} offset={-100}>
+                                    My skills
+                                </ScrollLink>
+                            </li>
+                            <li>
+                                <ScrollLink to='contact' className='hire-me' href='#' spy={true} smooth={true} duration={500} offset={-100}>
+                                    Hire me
+                                </ScrollLink>
+                            </li>
                         </ul>
                     </nav>
                 </header>
                 <div className='social-header'>
                     <ul>
-                        <li><a target='_blank' href='https://www.github.com/ryanmcoble'><i className="fa-brands fa-github"></i></a></li>
-                        <li><a target='_blank' href='https://www.linkedin.com/in/rcoble/'><i className="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href='#'><i className="fa-brands fa-twitter"></i></a></li>
+                        <li><a target='_blank' href='https://www.github.com/ryanmcoble'><i className="fa-brands fa-github fa-lg"></i></a></li>
+                        <li><a target='_blank' href='https://www.linkedin.com/in/rcoble/'><i className="fa-brands fa-linkedin fa-lg"></i></a></li>
+                        <li><a href='#'><i className="fa-brands fa-freelancer fa-lg"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -71,18 +89,20 @@ export default function Layout({
                 <div className='footer-container'>
                     <div className='footer-left'>
                         <h3>Ryan Coble</h3>
-                        <p>Full Stack Developer</p>
+                        <p>Senior Engineer</p>
+                        <p><a href='mailto:ryan.m.coble@gmail.com'>ryan.m.coble@gmail.com</a></p>
                     </div>
                     <div className='footer-right'>
-                        <ul>
-                            <li><a href='#'>My work</a></li>
-                            <li><a href='#'>My skills</a></li>
-                            <li><a href='#'>Hire me</a></li>
-                        </ul>
+                        <div className='social-footer'>
+                            <ul>
+                                <li><a target='_blank' href='https://www.github.com/ryanmcoble'><i className="fa-brands fa-github fa-lg white"></i></a></li>
+                                <li><a target='_blank' href='https://www.linkedin.com/in/rcoble/'><i className="fa-brands fa-linkedin fa-lg white"></i></a></li>
+                                <li><a href='#'><i className="fa-brands fa-freelancer fa-lg white"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </footer>
-
 
             <Script src="https://kit.fontawesome.com/1fe7179e06.js" crossOrigin="anonymous"></Script>
         </div>
