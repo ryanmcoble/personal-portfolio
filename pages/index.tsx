@@ -187,28 +187,28 @@ export default function Home({
                         icon: 'fa-laravel'
                     },
                     {
-                        title: 'React',
-                        icon: 'fa-react'
-                    },
-                    {
                         title: 'Node',
                         icon: 'fa-node'
                     },
                     {
-                        title: 'Symfony',
-                        icon: 'fa-symfony'
+                        title: 'React',
+                        icon: 'fa-react'
                     },
                     {
                         title: 'PHP',
                         icon: 'fa-php'
                     },
                     {
-                        title: 'Salesforce',
-                        icon: 'fa-salesforce'
-                    },
-                    {
                         title: 'Javascript',
                         icon: 'fa-js'
+                    },
+                    {
+                        title: 'Symfony',
+                        icon: 'fa-symfony'
+                    },
+                    {
+                        title: 'Salesforce',
+                        icon: 'fa-salesforce'
                     },
                     {
                         title: 'Mailchimp',

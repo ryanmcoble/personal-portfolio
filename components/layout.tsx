@@ -32,12 +32,17 @@ export default function Layout({
                     name="description"
                     content="The personal portfolio of Ryan Coble"
                 />
-                <meta
-                    property="og:image"
-                    content={`https://ryanmcoble.com/images/site.png`}
-                />
-                <meta name="og:title" content={siteTitle} />
-                <meta name="twitter:card" content="https://ryanmcoble.com/images/site.png" />
+                <meta property="og:url" content="https://ryanmcoble.com" />
+                <meta property="og:title" content={siteTitle} />
+                <meta property="og:description" content="The personal portfolio of Ryan Coble" />
+                <meta property="og:image" content="https://ryanmcoble.com/images/site.png" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:domain" content="ryanmcoble.com" />
+                <meta property="twitter:url" content="https://ryanmcoble.com" />
+                <meta name="twitter:title" content="Ryan Coble's Portfolio" />
+                <meta name="twitter:description" content="The personal portfolio of Ryan Coble" />
+                <meta name="twitter:image" content="https://ryanmcoble.com/images/site.png" />
             </Head>
 
             {/*  Site header */}
