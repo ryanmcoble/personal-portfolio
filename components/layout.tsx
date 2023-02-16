@@ -45,14 +45,9 @@ export default function Layout({
                 <meta name="twitter:image" content="https://ryanmcoble.com/images/site.png" />
             </Head>
 
-            {/*  Site header */}
             <Header />
-
             <main>{children}</main>
-
-            {/*  Site footer */}
             <Footer />
-
 
             <Script src="https://kit.fontawesome.com/1fe7179e06.js" crossOrigin="anonymous"></Script>
         </div>
