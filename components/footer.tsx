@@ -42,7 +42,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-right">
-                <form name="contact" method="POST" className="contact" data-netlify="true">
+                <form name="contact" method="POST" className="inquiry-contact" data-netlify="true">
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" required />
 
