@@ -52,7 +52,7 @@ export default function Footer() {
                     <label htmlFor="message">Message:</label>
                     <textarea id="message" name="message" required></textarea>
 
-                    <button type="submit">Send message</button>
+                    <button type="submit">Send me a message</button>
                 </form>
             </div>
         </div>

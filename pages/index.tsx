@@ -273,40 +273,6 @@ export default function Home({
 
                 ]}
             />
-
-            {/* Contact */}
-            {/* <section className='contact'>
-                <div className='contact-container transition3'>
-                    <div className="contact-left">
-                        <div className="inner">
-                            <p className="subtitle">Let's Talk</p>
-                            <p className="title">Connect with me to learn more about my experience and expertise</p>
-                            <p className="description">Whether you're looking to collaborate on a project, discuss potential job opportunities, or just want to say hello, I'd love to hear from you. Fill out the form below or send me an email at ryan.m.coble@gmail.com and I'll get back to you as soon as I can.</p>
-                        </div>
-                    </div>
-                    <div className="contact-right">
-                        <div className="inner">
-                            <form action="">
-                                <div className="form-group">
-                                    <label htmlFor="name">Name</label>
-                                    <input type="text" name="name" id="name" placeholder='Name' />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" name="email" id="email" placeholder='Email address' />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="message">Message</label>
-                                    <textarea name="message" id="message" cols={30} rows={10} placeholder='Message'></textarea>
-                                </div>
-                                <div className="form-group">
-                                    <button type="submit">Send</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </Layout>
     )
 }
