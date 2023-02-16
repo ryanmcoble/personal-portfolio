@@ -11,7 +11,6 @@ export default function Technologies({
         <ul>
             {technologies.map((technology, index) => (<li key={index}>
                 <i className={'fab ' + technology.icon + ' fa-lg'}></i>
-                {/* <p>{technology.title}</p> */}
             </li>))}
         </ul>
     </section>;

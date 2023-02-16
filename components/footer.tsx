@@ -1,37 +1,6 @@
 
 
 export default function Footer() {
-    /*return <footer>
-        <div className='footer-container'>
-            <div className='footer-left'>
-                <h3>Ryan Coble</h3>
-                <p>Software Engineer</p>
-                <p><a href='mailto:ryan.m.coble@gmail.com'>ryan.m.coble@gmail.com</a></p>
-            </div>
-            <div className='footer-right'>
-                <div className='social-footer'>
-                    <ul>
-                        <li>
-                            <a target='_blank' href='https://www.github.com/ryanmcoble'>
-                                <i className="fa-brands fa-github fa-lg white"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target='_blank' href='https://www.linkedin.com/in/rcoble/'>
-                                <i className="fa-brands fa-linkedin fa-lg white"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='#'>
-                                <i className="fa-brands fa-freelancer fa-lg white"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>;*/
-
     return <footer>
         <div className="container">
             <div className="footer-left">
