@@ -1,5 +1,8 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import Scroll from 'react-scroll'
+
+const ScrollLink = Scroll.Link
 
 export default function Hero() {
     const contentRef = useRef(null);

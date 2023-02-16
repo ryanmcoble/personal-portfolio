@@ -1,6 +1,6 @@
 import Scroll from 'react-scroll'
 
-const  ScrollLink = Scroll.Link
+const ScrollLink = Scroll.Link
 
 
 export default function Header({}) {
